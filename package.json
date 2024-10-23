@@ -1,0 +1,14 @@
+{
+  "name": "group2",
+  "version": "1.0.0",
+  "description": "bai tap nhom",
+  "main": "index.js",
+  "author": "nhom2",
+  "license": "ISC",
+  "scripts": {
+    "start": "npx tailwindcss -i ./src/assets/input.css -o ./src/assets/output.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.13"
+  }
+}
