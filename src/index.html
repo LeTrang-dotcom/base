@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -11,21 +11,54 @@
 <body class="bg-[#CDC4F9] p-4">
     <!-- component -->
     <div class="flex h-screen overflow-hidden bg-transparent rounded-xl">
+        <!-- Navigation menu -->
+        <div class="w-1/12 bg-white">
+            <div class="flex flex-col mb-4 cursor-pointer py-6 rounded-tl-md bg-indigo-500 h-full items-center">
+                <div class="relative group">
+                    <!-- Nút hoặc biểu tượng mà khi hover sẽ hiện menu -->
+                    <div class="flex items-center mb-4 cursor-pointer hover:bg-gray-100 p-2 rounded-md">
+                        <div class="w-12 h-12 bg-gray-300 rounded-full mr-3">
+                            <img src="https://placehold.co/200x/ffa8e4/ffffff.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato"
+                                alt="User Avatar" class="w-12 h-12 rounded-full">
+                        </div>
+                    </div>
+
+                    <!-- Menu xuất hiện khi hover -->
+                    <div
+                        class="absolute left-0 top-full mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden group-hover:block">
+                        <ul class="py-2">
+                            <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Nâng cấp tài khoản</li>
+                            <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Hồ sơ của bạn</li>
+                            <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Cài đặt</li>
+                            <li class="border-t my-2"></li> <!-- Dòng kẻ phân cách -->
+                            <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Đăng xuất</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="flex items-center mb-4 cursor-pointer hover:bg-gray-100 p-2 rounded-md">
+                    <div class="w-12 h-12 text-white mr-3 flex justify-center items-center ">
+                        <img src="./assets/image/comment-dots.svg" alt="comment dots" class="w-8">
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- Sidebar -->
-        <div class="w-1/4 bg-white border-gray-300">
+        <div class="w-1/3 bg-white border-gray-300">
             <!-- Sidebar Header -->
             <header class="p-4 flex justify-center h-20 items-center text-white">
                 <div class="input-group mb-3 flex justify-between w-full">
-                    <div class="w-3/4 flex relative ">
-                        <input type="text" class="w-full rounded-md text-black outline-none z-0 absolute bg-gray-200"
+                    <div class="w-3/4 relative flex">
+                        <input type="text" class="w-full rounded-md text-black outline-none bg-gray-200 p-2"
                             placeholder="Search">
-                        <button type="button">
-                            <img src="./assets/image/x.svg" alt="X" class="w-2 absolute z-1 right-0">
+                        <button type="button"
+                            class="absolute inset-y-0 right-0 px-3 flex items-center h-full bg-gray-200 rounded-md">
+                            <img src="./assets/image/x.svg" alt="X" class="w-2 h-4">
                         </button>
                     </div>
 
-                    <button class="w-1/4 flex justify-center" type="button" id="button-addon2">
-                        <img src="./assets/image/magnifying-glass.svg" alt="magnifying glass" class="w-4">
+                    <button class="w-1/4 flex justify-center items-center" type="button" id="button-addon2">
+                        <img src="./assets/image/magnifying-glass.svg" alt="magnifying glass" class="w-5 h-5">
                     </button>
                 </div>
             </header>
@@ -50,7 +83,8 @@
                     </div>
                     <div class="flex-1">
                         <h2 class="text-lg font-semibold">Martin</h2>
-                        <p class="text-gray-600">That pizza place was amazing! We should go again sometime. 🍕</p>
+                        <p class="text-gray-600">That pizza place was amazing! We should go
+                            again sometime. 🍕</p>
                     </div>
                 </div>
 
@@ -147,10 +181,19 @@
         </div>
 
         <!-- Main Chat Area -->
-        <div class="flex-1 rounded-xl relative bg-white">
+        <div class="flex-1 relative bg-white">
             <!-- Chat Header -->
-            <header class="bg-white p-4 text-gray-700 w-full">
-                <h1 class="text-2xl font-semibold">Alice</h1>
+            <header class="bg-white p-4 text-gray-700 w-full flex flex-row justify-between items-center">
+                <div class="flex items-center">
+                    <div class="w-12 h-12 bg-gray-300 rounded-full mr-3">
+                        <img src="https://placehold.co/200x/ffa8e4/ffffff.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato" alt="User Avatar"
+                            class="w-12 h-12 rounded-full">
+                    </div>
+                    <h1 class="text-2xl font-semibold">Alice</h1>
+                </div>
+                <div class="w-5">
+                    <img src="./assets/image/ellipsis.svg" alt="ellipsis">
+                </div>
             </header>
 
             <!-- Chat Messages -->
@@ -282,11 +325,11 @@
                 <div class="flex items-center">
                     <input type="text" placeholder="Type a message..."
                         class="w-full p-2 rounded-md focus:outline-none focus:border-blue-500 bg-gray-200">
-                    <button class="text-white px-4 py-2 rounded-md ml-2">
-                        <img src="./assets/image/paperclip.svg" alt="paperclip" class="w-8">
+                    <button class="text-white p-2 rounded-md ml-2">
+                        <img src="./assets/image/paperclip.svg" alt="paperclip" class="w-6 h-8">
                     </button>
-                    <button class="text-white px-4 py-2 rounded-md ml-2">
-                        <img src="./assets/image/paper-plane.svg" alt="paper plane" class="w-10">
+                    <button class="text-white p-2 rounded-md ml-2">
+                        <img src="./assets/image/paper-plane.svg" alt="paper plane" class="w-8">
                     </button>
                 </div>
             </footer>
