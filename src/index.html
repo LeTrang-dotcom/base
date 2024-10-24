@@ -17,15 +17,15 @@
                 <div class="relative group">
                     <!-- Nút hoặc biểu tượng mà khi hover sẽ hiện menu -->
                     <div class="flex items-center mb-4 cursor-pointer hover:bg-gray-100 p-2 rounded-md">
-                        <div class="w-12 h-12 bg-gray-300 rounded-full mr-3">
+                        <button class="w-12 h-12 bg-gray-300 rounded-full" id="toggle-menu-btn">
                             <img src="https://placehold.co/200x/ffa8e4/ffffff.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato"
                                 alt="User Avatar" class="w-12 h-12 rounded-full">
-                        </div>
-                    </div>
+                        </button>
+                    </div> 
 
                     <!-- Menu xuất hiện khi hover -->
                     <div
-                        class="absolute left-0 top-full mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden group-hover:block">
+                        class="absolute left-0 top-full mt-2 w-48 bg-white rounded-md shadow-lg hidden transition-opacity duration-300" id="toggle-menu">
                         <ul class="py-2">
                             <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Nâng cấp tài khoản</li>
                             <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Hồ sơ của bạn</li>
@@ -37,7 +37,7 @@
                 </div>
 
                 <div class="flex items-center mb-4 cursor-pointer hover:bg-gray-100 p-2 rounded-md">
-                    <div class="w-12 h-12 text-white mr-3 flex justify-center items-center ">
+                    <div class="w-12 h-12 text-white flex justify-center items-center ">
                         <img src="./assets/image/comment-dots.svg" alt="comment dots" class="w-8">
                     </div>
                 </div>
@@ -48,143 +48,28 @@
             <!-- Sidebar Header -->
             <header class="p-4 flex justify-center h-20 items-center text-white">
                 <div class="input-group mb-3 flex justify-between w-full">
-                    <div class="w-3/4 relative flex">
+                    <div class="w-full relative flex">
                         <input type="text" class="w-full rounded-md text-black outline-none bg-gray-200 p-2"
-                            placeholder="Search">
+                            placeholder="Search" id="search-input">
                         <button type="button"
-                            class="absolute inset-y-0 right-0 px-3 flex items-center h-full bg-gray-200 rounded-md">
-                            <img src="./assets/image/x.svg" alt="X" class="w-2 h-4">
+                            class="absolute inset-y-0 right-0 px-3 flex items-center h-full bg-gray-200 rounded-md" onclick="clearSearch()">
+                            <img src="./assets/image/magnifying-glass.svg" alt="magnifying glass" class="w-5 h-5" id="search-or-delete">
                         </button>
                     </div>
-
-                    <button class="w-1/4 flex justify-center items-center" type="button" id="button-addon2">
-                        <img src="./assets/image/magnifying-glass.svg" alt="magnifying glass" class="w-5 h-5">
-                    </button>
                 </div>
             </header>
 
             <!-- Contact List -->
-            <div class="overflow-y-auto h-screen p-3 mb-9 pb-20">
-                <div class="flex items-center mb-4 cursor-pointer hover:bg-gray-100 p-2 rounded-md">
-                    <div class="w-12 h-12 bg-gray-300 rounded-full mr-3">
-                        <img src="https://placehold.co/200x/ffa8e4/ffffff.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato" alt="User Avatar"
-                            class="w-12 h-12 rounded-full">
-                    </div>
-                    <div class="flex-1">
-                        <h2 class="text-lg font-semibold">Alice</h2>
-                        <p class="text-gray-600">Hoorayy!!</p>
-                    </div>
-                </div>
-
-                <div class="flex items-center mb-4 cursor-pointer hover:bg-gray-100 p-2 rounded-md">
-                    <div class="w-12 h-12 bg-gray-300 rounded-full mr-3">
-                        <img src="https://placehold.co/200x/ad922e/ffffff.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato" alt="User Avatar"
-                            class="w-12 h-12 rounded-full">
-                    </div>
-                    <div class="flex-1">
-                        <h2 class="text-lg font-semibold">Martin</h2>
-                        <p class="text-gray-600">That pizza place was amazing! We should go
-                            again sometime. 🍕</p>
-                    </div>
-                </div>
-
-                <div class="flex items-center mb-4 cursor-pointer hover:bg-gray-100 p-2 rounded-md">
-                    <div class="w-12 h-12 bg-gray-300 rounded-full mr-3">
-                        <img src="https://placehold.co/200x/2e83ad/ffffff.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato" alt="User Avatar"
-                            class="w-12 h-12 rounded-full">
-                    </div>
-                    <div class="flex-1">
-                        <h2 class="text-lg font-semibold">Charlie</h2>
-                        <p class="text-gray-600">Hey, do you have any recommendations for a good movie to watch?</p>
-                    </div>
-                </div>
-
-                <div class="flex items-center mb-4 cursor-pointer hover:bg-gray-100 p-2 rounded-md">
-                    <div class="w-12 h-12 bg-gray-300 rounded-full mr-3">
-                        <img src="https://placehold.co/200x/c2ebff/0f0b14.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato" alt="User Avatar"
-                            class="w-12 h-12 rounded-full">
-                    </div>
-                    <div class="flex-1">
-                        <h2 class="text-lg font-semibold">David</h2>
-                        <p class="text-gray-600">I just finished reading a great book! It was so captivating.</p>
-                    </div>
-                </div>
-
-                <div class="flex items-center mb-4 cursor-pointer hover:bg-gray-100 p-2 rounded-md">
-                    <div class="w-12 h-12 bg-gray-300 rounded-full mr-3">
-                        <img src="https://placehold.co/200x/e7c2ff/7315d1.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato" alt="User Avatar"
-                            class="w-12 h-12 rounded-full">
-                    </div>
-                    <div class="flex-1">
-                        <h2 class="text-lg font-semibold">Ella</h2>
-                        <p class="text-gray-600">What's the plan for this weekend? Anything fun?</p>
-                    </div>
-                </div>
-
-                <div class="flex items-center mb-4 cursor-pointer hover:bg-gray-100 p-2 rounded-md">
-                    <div class="w-12 h-12 bg-gray-300 rounded-full mr-3">
-                        <img src="https://placehold.co/200x/ffc2e2/ffdbdb.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato" alt="User Avatar"
-                            class="w-12 h-12 rounded-full">
-                    </div>
-                    <div class="flex-1">
-                        <h2 class="text-lg font-semibold">Fiona</h2>
-                        <p class="text-gray-600">I heard there's a new exhibit at the art museum. Interested?</p>
-                    </div>
-                </div>
-
-                <div class="flex items-center mb-4 cursor-pointer hover:bg-gray-100 p-2 rounded-md">
-                    <div class="w-12 h-12 bg-gray-300 rounded-full mr-3">
-                        <img src="https://placehold.co/200x/f83f3f/4f4f4f.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato" alt="User Avatar"
-                            class="w-12 h-12 rounded-full">
-                    </div>
-                    <div class="flex-1">
-                        <h2 class="text-lg font-semibold">George</h2>
-                        <p class="text-gray-600">I tried that new cafe downtown. The coffee was fantastic!</p>
-                    </div>
-                </div>
-
-                <div class="flex items-center mb-4 cursor-pointer hover:bg-gray-100 p-2 rounded-md">
-                    <div class="w-12 h-12 bg-gray-300 rounded-full mr-3">
-                        <img src="https://placehold.co/200x/dddddd/999999.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato" alt="User Avatar"
-                            class="w-12 h-12 rounded-full">
-                    </div>
-                    <div class="flex-1">
-                        <h2 class="text-lg font-semibold">Hannah</h2>
-                        <p class="text-gray-600">I'm planning a hiking trip next month. Want to join?</p>
-                    </div>
-                </div>
-
-                <div class="flex items-center mb-4 cursor-pointer hover:bg-gray-100 p-2 rounded-md">
-                    <div class="w-12 h-12 bg-gray-300 rounded-full mr-3">
-                        <img src="https://placehold.co/200x/70ff33/501616.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato" alt="User Avatar"
-                            class="w-12 h-12 rounded-full">
-                    </div>
-                    <div class="flex-1">
-                        <h2 class="text-lg font-semibold">Ian</h2>
-                        <p class="text-gray-600">Let's catch up soon. It's been too long!</p>
-                    </div>
-                </div>
-
-                <div class="flex items-center mb-4 cursor-pointer hover:bg-gray-100 p-2 rounded-md">
-                    <div class="w-12 h-12 bg-gray-300 rounded-full mr-3">
-                        <img src="https://placehold.co/200x/30916c/ffffff.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato" alt="User Avatar"
-                            class="w-12 h-12 rounded-full">
-                    </div>
-                    <div class="flex-1">
-                        <h2 class="text-lg font-semibold">Jack</h2>
-                        <p class="text-gray-600">Remember that hilarious joke you told me? I can't stop laughing!</p>
-                    </div>
-                </div>
-
-
+            <div class="overflow-y-auto h-screen p-3 mb-9 pb-20" id="area-list-chat">
+           
             </div>
         </div>
 
         <!-- Main Chat Area -->
         <div class="flex-1 relative bg-white">
             <!-- Chat Header -->
-            <header class="bg-white p-4 text-gray-700 w-full flex flex-row justify-between items-center">
-                <div class="flex items-center">
+            <header class="bg-white p-4 text-gray-700 w-full flex flex-row justify-between items-center" id="chat-header">
+                <!-- <div class="flex items-center">
                     <div class="w-12 h-12 bg-gray-300 rounded-full mr-3">
                         <img src="https://placehold.co/200x/ffa8e4/ffffff.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato" alt="User Avatar"
                             class="w-12 h-12 rounded-full">
@@ -193,11 +78,11 @@
                 </div>
                 <div class="w-5">
                     <img src="./assets/image/ellipsis.svg" alt="ellipsis">
-                </div>
+                </div> -->
             </header>
 
             <!-- Chat Messages -->
-            <div class="h-screen overflow-y-auto p-4 pb-36 ">
+            <div class="h-screen overflow-y-auto p-4 pb-36 " id="conversation-view">
                 <!-- Incoming Message -->
                 <div class="flex mb-4 cursor-pointer">
                     <div class="w-9 h-9 rounded-full flex items-center justify-center mr-2">
@@ -335,26 +220,7 @@
             </footer>
         </div>
     </div>
-    <script>
-        // JavaScript for showing/hiding the menu
-        const menuButton = document.getElementById('menuButton');
-        const menuDropdown = document.getElementById('menuDropdown');
-
-        menuButton.addEventListener('click', () => {
-            if (menuDropdown.classList.contains('hidden')) {
-                menuDropdown.classList.remove('hidden');
-            } else {
-                menuDropdown.classList.add('hidden');
-            }
-        });
-
-        // Close the menu if you click outside of it
-        document.addEventListener('click', (e) => {
-            if (!menuDropdown.contains(e.target) && !menuButton.contains(e.target)) {
-                menuDropdown.classList.add('hidden');
-            }
-        });
-    </script>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>
